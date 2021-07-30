@@ -42,10 +42,6 @@ if [ -d $HOME/.cargo/env ]; then
     export PATH="$HOME/.cargo/bin:$PATH" 
 fi
 
-if [ -x "$(command -v go)" ]; then
-    eval $(thefuck --alias)
-fi
-
 if [ -x "$(command -v rbenv)" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
@@ -54,11 +50,15 @@ fi
 
 export PATH="$HOME/.npm-global/bin:$PATH"
 
-bindkey '^ ' autosuggest-accept # Use ctrl space for zsh autocomplete
-
-fpath+=${ZDOTDIR:-~}/.zsh_functions
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+if [ -x "$(command -v thefuck)" ]; then
+    eval $(thefuck --alias)
+fi
+
+# fpath+=${ZDOTDIR:-~}/.zsh_functions
+bindkey '^ ' autosuggest-accept # Use ctrl space for zsh autocomplete

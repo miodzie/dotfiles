@@ -466,7 +466,7 @@ set ignorecase              " Case insensitive
 set smartcase               " Lets you search for ALL CAPS 
 set autoindent              " Auto indents new lines.
 set expandtab 
-set tabstop=4               " Changes TAB to four spaces
+set tabstop=2
 set shiftwidth=4 
 set softtabstop=4
 set copyindent 
