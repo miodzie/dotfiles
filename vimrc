@@ -475,7 +475,7 @@ set lbr
 set infercase               " Completion recognizes capitalization
 set linebreak               " Break long lines by word, not char 
 set nowrap
-set textwidth=88
+set textwidth=80
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
