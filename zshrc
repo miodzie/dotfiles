@@ -36,6 +36,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+
 
 if [ -d $HOME/.cargo/env ]; then
     source $HOME/.cargo/env
