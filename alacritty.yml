@@ -733,6 +733,8 @@ key_bindings:
   - { key: Left,     mods: Command, chars: "\x1bOH",   mode: AppCursor   } # Home
   - { key: Right,    mods: Command, chars: "\x1bOF",   mode: AppCursor   } # End
   - { key: Slash,    mods: Control, chars: "\x1f"                        }
+  - { key: F,  mods: Alt,           chars: "\x1bf"                       }
+  - { key: B,  mods: Alt,           chars: "\x1bb"                       }
   # - { key: Down,     mods: Alt,     chars: "\x1b[1;5B"                   }
   # - { key: Left,     mods: Alt,     chars: "\x1bb"                       }
   # - { key: Right,    mods: Alt,     chars: "\x1bf"                       }
