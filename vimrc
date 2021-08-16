@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  Sections:
-"   -> Dependencies.
+"   -> Plugins.
 "   -> General.
 "   -> Syntax, Language specific, auto completion.
 "   -> Mappings.
@@ -15,15 +15,14 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ','
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Dependencies
+" => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 call plug#begin('~/.local/share/nvim/plugged') 
 
-Plug 'baverman/vial'
-Plug 'baverman/vial-http'
-nmap <leader><cr> :VialHttp<cr>
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'nicwest/vim-http'
+nmap <leader><cr> :Http<cr>
 
 " Languages, snippets
 Plug 'sheerun/vim-polyglot'
@@ -49,7 +48,6 @@ Plug 'tpope/vim-commentary'
 nmap <C-_> gcc
 vmap <C-_> gc
 "Plug 'alvan/vim-closetag'
-
 
 Plug 'editorconfig/editorconfig-vim'
 
@@ -95,7 +93,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'scrooloose/nerdtree'
 nmap \F :NERDTreeFind 
 nmap \e :NERDTreeToggle<CR><C-w>=
-let NERDTreeHijackNetrw = 1
+let NERDTreeHijackNetrw = 0
 let NERDTreeShowHidden = 1
 
 Plug 'mattn/calendar-vim'
@@ -454,7 +452,7 @@ command! Todo call s:todo()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 set relativenumber 
 set clipboard=unnamedplus 
-set number                                              
+set number
 
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr> 
@@ -467,7 +465,7 @@ set smartcase               " Lets you search for ALL CAPS
 set autoindent              " Auto indents new lines.
 set expandtab 
 set tabstop=2
-set shiftwidth=4 
+set shiftwidth=4
 set softtabstop=4
 set copyindent 
 set smarttab 
@@ -596,4 +594,3 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 " An additional vimrc settings file specific to the machine i'm working on.
 source ~/.vimrc_specific
-

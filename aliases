@@ -144,3 +144,11 @@ alias vim="nvim"
 alias vi="nvim"
 alias ts="npx ts-node"
 alias pm="npx pm2"
+
+
+
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
