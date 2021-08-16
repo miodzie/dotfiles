@@ -8,45 +8,38 @@ plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh 
 export LANG=en_US.UTF-8 
 
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
+bindkey '^ ' autosuggest-accept # Use ctrl space for zsh autocomplete
+fpath+=${ZDOTDIR:-~}/.zsh_functions
 
+[ -f ~/.aliases ]; source ~/.aliases;
 export EDITOR="nvim" 
 source ~/.secrets
+export PATH="$PATH:$HOME/scripts" 
 
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --no-ignore-vcs --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Go
 export PATH=$PATH:/usr/local/go/bin
 if [ -x "$(command -v go)" ]; then
     export GOPATHV
     export PATH=$PATH:$(go env GOPATH)/bin
     export GOPATH=$(go env GOPATH)
-fi
-# export PATH=$PATH:~/.local/bin
-# export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-export PATH="$PATH:$HOME/scripts" 
-# for go get stuff
-export GIT_TERMINAL_PROMPT=1
-
-if [ -d "/home/linuxbrew/.linuxbrew/bin/brew shellenv" ]; then 
-    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv) 
+    export GIT_TERMINAL_PROMPT=1 # for go get stuff
 fi
 
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --no-ignore-vcs --follow --exclude .git'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+# Composer + PHP
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
-
+# Cargo + Rust
 if [ -d $HOME/.cargo/env ]; then
     source $HOME/.cargo/env
     export PATH="$HOME/.cargo/bin:$PATH" 
 fi
 
-
-# Lazy load rbenv
+# rbenv + Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 if type rbenv > /dev/null; then
@@ -62,8 +55,6 @@ function ruby() {
     if [ -z ${RBENV_SHELL} ]; then eval "$(command rbenv init - --no-rehash)"; fi
     ruby $@
 }
-
-export PATH="$HOME/.npm-global/bin:$PATH"
 
 # Lazy load pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -82,10 +73,6 @@ function python() {
     python $@
 }
 
-# Slows everything down, and I don't even use it
-# if [ -x "$(command -v thefuck)" ]; then
-    # eval $(thefuck --alias)
-# fi
 
-fpath+=${ZDOTDIR:-~}/.zsh_functions
-bindkey '^ ' autosuggest-accept # Use ctrl space for zsh autocomplete
+# load exploits
+export PATH="$HOME/.npm-global/bin:$PATH"
