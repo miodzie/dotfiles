@@ -1,11 +1,6 @@
 dotfiles
 ========
-My dot files.
-
-
-Many configs/scripts stolen from many places
-
-Honestly it's a mess the only interesting thing would be my .vimrc
+no secret keys and envs to find here no sir
 
 Installation
 ------------
