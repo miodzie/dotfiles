@@ -45,8 +45,11 @@ font monospace 12 # i'm literally blind
 gaps inner 20
 for_window [class="^.*"] border pixel 2
 
-#set $opacity 0.50
-#for_window [app_id="alacritty"] opacity $opacity
+set $opacity 0.99
+for_window [app_id="Alacritty"] opacity $opacity
+#set $opacity 0.9
+#for_window [class=".*"] opacity $opacity
+#for_window [app_id=".*"] opacity $opacity
 
 # Media 
 exec pulseaudio --daemonize
