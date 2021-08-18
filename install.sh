@@ -21,9 +21,13 @@ then
     rm -rf ~/scripts
     ln -s ${PWD}/scripts ~/scripts
 
-    # i3
-    rm -rf ~/.config/i3
-    ln -s ${PWD}/config/i3 ~/.config/i3
+    # sway
+    rm -rf ~/.config/sway
+    ln -s ${PWD}/config/sway ~/.config/sway
+
+    # polybar
+    rm -rf ~/.config/polybar
+    ln -s ${PWD}/config/polybar ~/.config/polybar
 
     # vim
     rm -rf ~/.vim

@@ -504,7 +504,7 @@ let g:gruvbox_contrast_dark = 'medium'
 colorscheme gruvbox
 set background=dark
 " For transparent term
-"hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 
 " True color stuff
 if !has('gui_running')
