@@ -12,13 +12,16 @@ bindkey '^ ' autosuggest-accept # Use ctrl space for zsh autocomplete
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 [ -f ~/.aliases ]; source ~/.aliases;
-export EDITOR="nvim" 
 source ~/.secrets
+export EDITOR="nvim" 
 export PATH="$PATH:$HOME/scripts" 
+
+export LESS=-Rj.5
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --no-ignore-vcs --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# FZF mappings and options
+[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
