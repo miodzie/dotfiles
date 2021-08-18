@@ -135,6 +135,9 @@ set complete=.,w,b,u,t,i,kspell "Set our desired autocompletion matching
 set cursorline
 "hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
+" Hide the last status, default is 2
+set laststatus=0
+
 set showcmd "Show (partial) command in the status line.  
 set magic " For regular expressions turn magic on 
 set shortmess+=A            " Don't bother me when a swapfile exists 
