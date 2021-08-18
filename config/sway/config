@@ -6,7 +6,7 @@
 
 ### Variables
 #
-# Logo key. Use Mod1 for Alt.
+# Logo key. Use Mod1 for Alt. Mod4 for Logo key
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
@@ -236,6 +236,12 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+#bindsym $mod+Alt+Control+$left resize shrink width 20px
+#bindsym $mod+Alt+Control+down resize grow height 20px
+#bindsym $mod+Alt+Control+up resize shrink height 20px
+#bindsym $mod+Alt+Control+right resize grow width 20px
+
 
 #
 # Status Bar:
