@@ -65,8 +65,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 Plug 'ap/vim-css-color'
 
-Plug 'vim-airline/vim-airline'        " status bar
-Plug 'vim-airline/vim-airline-themes' " status bar themes
+" Plug 'vim-airline/vim-airline'        " status bar
+" Plug 'vim-airline/vim-airline-themes' " status bar themes
 
 Plug 'junegunn/fzf.vim'
 set rtp+=/usr/local/opt/fzf
