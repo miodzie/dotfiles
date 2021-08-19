@@ -46,7 +46,7 @@ end
 -- end
 
 nvim_lsp.tsserver.setup{ on_attach=on_attach }
-
+nvim_lsp.intelephense.setup{ on_attach=on_attach }
 nvim_lsp.gopls.setup{
     on_attach=on_attach,
     cmd = {"gopls", "serve"},

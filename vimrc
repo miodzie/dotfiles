@@ -46,10 +46,9 @@ endif
 Plug 'tpope/vim-commentary'
 nmap <C-_> gcc
 vmap <C-_> gc
-"Plug 'alvan/vim-closetag'
 
 Plug 'tpope/vim-unimpaired' 
-Plug 'Yggdroot/indentLine' " Show line indenations 
+Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 
 Plug 'jiangmiao/auto-pairs'
@@ -77,10 +76,6 @@ nmap <Leader>A :Rg<CR>
 nmap <Leader>l :BLines<CR>
 nmap <Leader>L :Lines<CR>
 nmap <Leader>g :BCommits<cr>
-" nmap <Leader>G :Commits
-" nnoremap <silent> <Leader>ag       :Ag <C-R><C-W>
-" nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
-" xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
 
 Plug 'junegunn/goyo.vim'
 nnoremap <Leader>G :Goyo<CR>
@@ -120,7 +115,7 @@ call plug#end()
 
 
 lua require("vulski")
-lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -135,7 +130,7 @@ set complete=.,w,b,u,t,i,kspell "Set our desired autocompletion matching
 set cursorline
 "hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
-" Hide the last status, default is 2
+" Hides bar, default is 2
 set laststatus=0
 
 set showcmd "Show (partial) command in the status line.  
