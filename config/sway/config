@@ -45,14 +45,14 @@ font monospace 12 # i'm literally blind
 gaps inner 20
 for_window [class="^.*"] border pixel 2
 
-set $opacity 0.99
-for_window [app_id="Alacritty"] opacity $opacity
+#set $opacity 0.99
+#for_window [app_id="Alacritty"] opacity $opacity
 #set $opacity 0.9
 #for_window [class=".*"] opacity $opacity
 #for_window [app_id=".*"] opacity $opacity
 
 # Media 
-exec pulseaudio --daemonize
+#exec pulseaudio --daemonize
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
