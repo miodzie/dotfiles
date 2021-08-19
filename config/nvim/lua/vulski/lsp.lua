@@ -33,18 +33,6 @@ local on_attach = function(client, bufnr)
 
 end
 
--- -- Use a loop to conveniently call 'setup' on multiple servers and
--- -- map buffer local keybindings when the language server attaches
--- local servers = { 'pyright', 'rust_analyzer', 'tsserver' }
--- for _, lsp in ipairs(servers) do
---   nvim_lsp[lsp].setup {
---     on_attach = on_attach,
---     flags = {
---       debounce_text_changes = 150,
---     }
---   }
--- end
-
 nvim_lsp.tsserver.setup{ on_attach=on_attach }
 nvim_lsp.intelephense.setup{ on_attach=on_attach }
 nvim_lsp.gopls.setup{
