@@ -118,6 +118,7 @@ let g:NERDTreeHighlightCursorline = 0
 "https://superuser.com/questions/1335155/patched-fonts-not-showing-up-on-gnome-terminal#1336614
 call plug#end()
 
+
 lua require("vulski")
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
