@@ -27,6 +27,16 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
+" telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" Using Lua functions
+nnoremap <leader>f <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap ; <cmd>lua require('telescope.builtin').buffers()<cr>
+" nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
 Plug 'nicwest/vim-http'
 nmap <leader><cr> :Http<cr>
 
@@ -63,19 +73,6 @@ Plug 'ap/vim-css-color'
 
 " Plug 'vim-airline/vim-airline'        " status bar
 " Plug 'vim-airline/vim-airline-themes' " status bar themes
-
-Plug 'junegunn/fzf.vim'
-set rtp+=/usr/local/opt/fzf
-nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
-nnoremap <silent> ;  :Buffers<CR>
-nnoremap <silent> <Leader>L        :Lines<CR>
-nmap <Leader>f :Files<CR>
-nmap <Leader>F :Tags<CR>
-nmap <Leader>a :BTags<CR>
-nmap <Leader>A :Rg<CR>
-nmap <Leader>l :BLines<CR>
-nmap <Leader>L :Lines<CR>
-nmap <Leader>g :BCommits<cr>
 
 Plug 'junegunn/goyo.vim'
 nnoremap <Leader>G :Goyo<CR>
