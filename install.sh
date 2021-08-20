@@ -29,6 +29,10 @@ then
     rm -rf ~/.config/sway
     ln -s ${PWD}/config/sway ~/.config/sway
 
+    # swaylock
+    rm -rf ~/.config/swaylock
+    ln -s ${PWD}/config/swaylock ~/.config/swaylock
+
     # waybar
     rm -rf ~/.config/waybar
     ln -s ${PWD}/config/waybar ~/.config/waybar

@@ -18,7 +18,8 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $launcher dmenu_path | fzf | xargs swaymsg exec
 
 ### Output configuration
 #
@@ -94,7 +95,9 @@ bindsym XF86Search exec bemenu-run
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    # bindsym $mod+d exec $menu
+    bindsym $mod+d exec alacritty --title 'launcher' -e sh -c \'$launcher\'
+    for_window [title="^launcher$"] floating enable, border pixel
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
