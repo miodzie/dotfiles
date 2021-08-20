@@ -96,7 +96,8 @@ bindsym XF86Search exec bemenu-run
 
     # Start your launcher
     # bindsym $mod+d exec $menu
-    bindsym $mod+d exec alacritty --title 'launcher' -e sh -c \'$launcher\'
+    # Note, this doesn't work with floating windows having default sizes
+    bindsym $mod+d exec alacritty -o dimensions.columns=10 -o dimensions.lines=10 --title 'launcher' -e sh -c \'$launcher\'
     for_window [title="^launcher$"] floating enable, border pixel
 
     # Drag floating windows by holding down $mod and left mouse button.
