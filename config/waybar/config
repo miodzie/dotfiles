@@ -1,9 +1,11 @@
 {
-  "layer": "top",
+    "layer": "top",
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window", "sway/mode"],
     "modules-right": ["tray", "pulseaudio", "sway/language", "clock"],
-    "height": 25,
+    "sway/window": {
+        "max-length": 50
+    },
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
