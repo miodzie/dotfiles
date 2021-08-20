@@ -21,6 +21,10 @@ then
     rm -rf ~/scripts
     ln -s ${PWD}/scripts ~/scripts
 
+    # neofetch
+    rm -rf ~/.config/neofetch
+    ln -s ${PWD}/config/neofetch ~/.config/neofetch
+
     # sway
     rm -rf ~/.config/sway
     ln -s ${PWD}/config/sway ~/.config/sway

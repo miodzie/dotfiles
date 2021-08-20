@@ -7,6 +7,7 @@ ZSH_THEME='eastwood'
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh 
 export LANG=en_US.UTF-8 
+export PATH="$PATH:$HOME/.bin"
 
 bindkey '^ ' autosuggest-accept # Use ctrl space for zsh autocomplete
 fpath+=${ZDOTDIR:-~}/.zsh_functions

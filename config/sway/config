@@ -24,7 +24,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/default.png fill
-output * bg $HOME/anime/yellow_red_blue.png fill
+output * bg $HOME/Pictures/162929469195.jpg fill
 
 # Hide window titles
 for_window [title="."] border none
@@ -264,6 +264,12 @@ bar {
 
 # Suspend
 bindsym $mod+Shift+period exec systemctl suspend
+
+input "type:keyboard" {           
+    xkb_layout us,jp
+    # xkb_variant ,
+    xkb_options grp:alt_shift_toggle
+}
 
 include /etc/sway/config.d/*
 
