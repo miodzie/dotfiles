@@ -1,0 +1,47 @@
+{
+  "layer": "top",
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/window", "sway/mode"],
+    "modules-right": ["tray", "pulseaudio", "sway/language", "clock"],
+    "height": 25,
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十"
+        }
+    },
+    "sway/language": {
+      "format": "{}",
+      "max-length": 50,
+      "tooltip": false
+    },
+    "clock": {
+      "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "tray": {
+      "icon-size": 15,
+      "spacing": 10
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-muted": "",
+      "format-icons": {
+        "headphones": "",
+        "default": [""]
+      },
+      "scroll-step": 1,
+      "on-click": "pavucontrol"
+    }
+}

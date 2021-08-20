@@ -29,9 +29,9 @@ then
     rm -rf ~/.config/sway
     ln -s ${PWD}/config/sway ~/.config/sway
 
-    # polybar
-    rm -rf ~/.config/polybar
-    ln -s ${PWD}/config/polybar ~/.config/polybar
+    # waybar
+    rm -rf ~/.config/waybar
+    ln -s ${PWD}/config/waybar ~/.config/waybar
 
     # vim
     rm -rf ~/.vim

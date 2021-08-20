@@ -24,10 +24,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/default.png fill
-output * bg $HOME/Pictures/162929469195.jpg fill
-
-# Hide window titles
-for_window [title="."] border none
+output * bg $HOME/Pictures/1529563455624.jpg fill
 
 #
 # Example configuration:
@@ -39,11 +36,6 @@ output DP-1 pos 0 0 res 2560x1440@143.998Hz
 output * scale 1
 output DP-2 pos 2560 0 res 2560x1400
 
-font monospace 12 # i'm literally blind
-
-# Please mind the gap
-gaps inner 20
-for_window [class="^.*"] border pixel 2
 
 #set $opacity 0.99
 #for_window [app_id="Alacritty"] opacity $opacity
@@ -247,20 +239,24 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
+# bar {
+#     position top
 
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d - %H:%M  '; do sleep 1; done
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%Y-%m-%d - %H:%M  '; do sleep 1; done
 
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
+#     colors {
+#         statusline #ffffff
+#         background #323232
+#         inactive_workspace #32323200 #32323200 #5c5c5c
+#     }
+# }
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+bar {
+    swaybar_command waybar
+}
 
 # Suspend
 bindsym $mod+Shift+period exec systemctl suspend
@@ -272,5 +268,4 @@ input "type:keyboard" {
 }
 
 include /etc/sway/config.d/*
-
-
+include *.conf
