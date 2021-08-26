@@ -265,11 +265,7 @@ bar {
 # Suspend
 bindsym $mod+Shift+period exec systemctl suspend
 
-input "type:keyboard" {           
-    xkb_layout us,jp
-    # xkb_variant ,
-    xkb_options grp:alt_shift_toggle
-}
+exec ibus-daemon -rxd
 
 include /etc/sway/config.d/*
 include *.conf

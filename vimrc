@@ -14,9 +14,7 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ','
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+
 call plug#begin('~/.local/share/nvim/plugged') 
 
 " Plebvim lsp Plugins
@@ -36,9 +34,6 @@ nnoremap <leader>f <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap ; <cmd>lua require('telescope.builtin').buffers()<cr>
 " nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
-Plug 'nicwest/vim-http'
-nmap <leader><cr> :Http<cr>
 
 " Languages, snippets
 Plug 'vim-test/vim-test'
@@ -347,8 +342,8 @@ set smartcase               " Lets you search for ALL CAPS
 set autoindent              " Auto indents new lines.
 set expandtab 
 set tabstop=2
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set copyindent 
 set smarttab 
 set lbr

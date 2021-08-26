@@ -80,3 +80,7 @@ function python() {
 
 # load exploits
 export PATH="$HOME/.npm-global/bin:$PATH"
+
+# IBus stuff
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
