@@ -119,8 +119,8 @@ filetype plugin on
 nnoremap ' ` 
 set complete=.,w,b,u,t,i,kspell "Set our desired autocompletion matching
 
-set cursorline
-"hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+" set cursorline
+" hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
 " Hides bar, default is 2
 set laststatus=0
@@ -376,7 +376,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_invert_selection=0
 let g:gruvbox_contrast_dark = 'medium'
 colorscheme gruvbox
-set background=dark
+set background=light
 " For transparent term
 " hi Normal guibg=NONE ctermbg=NONE
 
