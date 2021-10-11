@@ -376,7 +376,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_invert_selection=0
 let g:gruvbox_contrast_dark = 'medium'
 colorscheme gruvbox
-set background=light
+set background=dark
 " For transparent term
 " hi Normal guibg=NONE ctermbg=NONE
 
