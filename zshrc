@@ -23,6 +23,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --no-ignore-vcs --follow --excl
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # FZF mappings and options
 [ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
@@ -78,9 +79,19 @@ function python() {
 }
 
 
+# Lazy load nvm, npm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+function nvm() {
+    unset -f nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    nvm $@
+}
+
+
 # load exploits
 export PATH="$HOME/.npm-global/bin:$PATH"
 
 # IBus stuff
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
+
