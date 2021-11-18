@@ -86,10 +86,14 @@ function nvm() {
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
     nvm $@
 }
-
+function npm() {
+    unset -f npm
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    npm $@
+}
 
 # load exploits
-export PATH="$HOME/.npm-global/bin:$PATH"
+# export PATH="$HOME/.npm-global/bin:$PATH"
 
 # IBus stuff
 export GTK_IM_MODULE=ibus
