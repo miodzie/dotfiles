@@ -47,3 +47,5 @@ nvim_lsp.gopls.setup{
         },
     },
 }
+nvim_lsp.solargraph.setup{ on_attach=on_attach }
+-- nvim_lsp.sorbet.setup{}

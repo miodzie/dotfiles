@@ -55,6 +55,4 @@ then
     echo "Put .vimrc machine specific settings in .vimrc_specific"
 fi
 
-
-mkdir ~/.npm-global
-npm config set prefix '~/.npm-global'
+git config --global core.excludesfile ~/.gitignore_global

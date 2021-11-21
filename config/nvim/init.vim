@@ -24,7 +24,6 @@ Plug 'hrsh7th/nvim-compe'
 
 " Neovim Tree shitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
 
 " telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -48,32 +47,24 @@ if has('nvim')
     tmap <C-o> <C-\><C-n>
 endif
 
-" Editing
+" Our one true God
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired' 
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 nmap <C-_> gcc
 vmap <C-_> gc
-
-Plug 'tpope/vim-unimpaired' 
-Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-surround'
 
 Plug 'jiangmiao/auto-pairs'
 let g:AutoPairsFlyMode = 0 "0 is default
 
 " Visuals
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter' 
-Plug 'arcticicestudio/nord-vim'
-Plug 'gruvbox-community/gruvbox'
-Plug 'ap/vim-css-color'
-
-" Plug 'vim-airline/vim-airline'        " status bar
-" Plug 'vim-airline/vim-airline-themes' " status bar themes
+Plug 'morhetz/gruvbox'
 
 Plug 'junegunn/goyo.vim'
 nnoremap <Leader>G :Goyo<CR>
-
-Plug 'tpope/vim-vinegar'
 
 Plug 'scrooloose/nerdtree'
 nmap \F :NERDTreeFind 
@@ -92,21 +83,10 @@ hi link VimwikiHeader1 GruvboxYellowBold
 hi link VimwikiHeader3 GruvboxAquaBold
 let g:vimwiki_list = [{'auto_tags': 1}]
 
-" This causes a lot of lag while NERDTree is open
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-let g:NERDTreeSyntaxDisableDefaultExtensions = 1
-let g:NERDTreeSyntaxDisableDefaultExactMatches = 1
-let g:NERDTreeSyntaxDisableDefaultPatternMatches = 1
-let g:NERDTreeSyntaxEnabledExtensions = ['php', 'js', 'ts', 'jsx', 'tsx', 'css', 'html', 'json', 'md', 'go', 'rs'] " enabled extensions with default colors
-let g:NERDTreeSyntaxEnabledExactMatches = ['node_modules', 'favicon.ico', '.env'] " enabled exact matches with default colors
-Plug 'ryanoasis/vim-devicons'
-let g:NERDTreeLimitedSyntax = 1
-let g:NERDTreeHighlightCursorline = 0
-"https://superuser.com/questions/1335155/patched-fonts-not-showing-up-on-gnome-terminal#1336614
 call plug#end()
 
 
-lua require("vulski")
+lua require("plugins")
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, indent = { enable = true }}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -151,7 +131,7 @@ set signcolumn=yes
 
 nnoremap <silent> <F4> gggqG
 nnoremap <silent> <F4> gggqG
-inoremap <silent> <F4> <C-R>=strftime("%m/%d/%y %H:%M:%S")<CR>
+inoremap <silent> <F4> <C-R>=strftime("11/20/21 03:35:43%m/%d/%y %H:%M:%S")<CR>
 nnoremap <silent> <F5> "=strftime("%m/%d/%y %H:%M:%S")<CR>P
 inoremap <silent> <F5> <C-R>=strftime("%m/%d/%y %H:%M:%S")<CR>
 
@@ -245,6 +225,57 @@ function! s:a(cmd)
 endfunction
 command! A call s:a('e')
 command! AV call s:a('botright vertical split')
+
+" ----------------------------------------------------------------------------
+" <F1> | Run script
+" ----------------------------------------------------------------------------
+function! s:run_this_script(output)
+  let head   = getline(1)
+  let pos    = stridx(head, '#!')
+  let file   = expand('%:p')
+  let ofile  = tempname()
+  let rdr    = " 2>&1 | tee ".ofile
+  let win    = winnr()
+  let prefix = a:output ? 'silent !' : '!'
+  " Shebang found
+  if pos != -1
+    execute prefix.strpart(head, pos + 2).' '.file.rdr
+  " Shebang not found but executable
+  elseif executable(file)
+    execute prefix.file.rdr
+  elseif &filetype == 'ruby'
+    execute prefix.'/usr/bin/env ruby '.file.rdr
+  elseif &filetype == 'tex'
+    execute prefix.'latex '.file. '; [ $? -eq 0 ] && xdvi '. expand('%:r').rdr
+  elseif &filetype == 'dot'
+    let svg = expand('%:r') . '.svg'
+    let png = expand('%:r') . '.png'
+    " librsvg >> imagemagick + ghostscript
+    execute 'silent !dot -Tsvg '.file.' -o '.svg.' && '
+          \ 'rsvg-convert -z 2 '.svg.' > '.png.' && open '.png.rdr
+  else
+    return
+  end
+  redraw!
+  if !a:output | return | endif
+
+  " Scratch buffer
+  if exists('s:vim_exec_buf') && bufexists(s:vim_exec_buf)
+    execute bufwinnr(s:vim_exec_buf).'wincmd w'
+    %d
+  else
+    silent!  bdelete [vim-exec-output]
+    silent!  vertical botright split new
+    silent!  file [vim-exec-output]
+    setlocal buftype=nofile bufhidden=wipe noswapfile
+    let      s:vim_exec_buf = winnr()
+  endif
+  execute 'silent! read' ofile
+  normal! gg"_dd
+  execute win.'wincmd w'
+endfunction
+" nnoremap <silent> <F1> :call <SID>run_this_script(0)<cr>
+nnoremap <silent> <F1> :call <SID>run_this_script(1)<cr>
 
 " ----------------------------------------------------------------------------
 " Todo

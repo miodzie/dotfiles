@@ -38,6 +38,9 @@ alias p='phpunit'
 alias pf='phpunit --filter '
 alias phpunit='php vendor/bin/phpunit'
 
+# Ruby
+alias rb="ruby"
+
 # PHP 
 alias cmp='composer'
 alias cmpd='composer dump'
@@ -129,11 +132,12 @@ alias reload="clear && exec $SHELL"
 alias sudo="sudo "
 
 
-# Mac Shit
+# Mac
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
+# I stole this and never use it it's kinda scary i dunno mang
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
 # Finally, clear download history from quarantine. https://mths.be/bum
@@ -154,4 +158,3 @@ timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
-
