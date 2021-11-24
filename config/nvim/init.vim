@@ -138,7 +138,7 @@ inoremap <silent> <F5> <C-R>=strftime("%m/%d/%y %H:%M:%S")<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
-nnoremap <silent> <F2> :set relativenumber!<CR> 
+nnoremap <silent> <F2> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<cr>
 
 "Make it easier to indent a visual selection several times.  
 xnoremap > >gv
@@ -306,6 +306,7 @@ command! Todo call s:todo()
 set relativenumber 
 set clipboard=unnamedplus 
 set number
+
 
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr> 
