@@ -4,4 +4,6 @@
 !snippets/pdv/*
 !snippets/pdv
 !plugins.vim
+!colors/
+!autoload/
 
