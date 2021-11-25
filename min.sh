@@ -1,8 +1,11 @@
 #!/bin/sh
 rm -rf ~/.vimrc
-rm -rf ~/.tmux.conf
 cp ${PWD}/vimrc ~/.vimrc
+
+rm -rf ~/.tmux.conf
 cp ${PWD}/tmux.conf ~/.tmux.conf
-cp -r ${PWD}/vim ~/.vim
+
+rm -rf ~/.vim
+cp -r ${PWD}/vim/* ~/.vim
 
 echo "done."
