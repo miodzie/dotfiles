@@ -6,6 +6,6 @@ rm -rf ~/.tmux.conf
 cp ${PWD}/tmux.conf ~/.tmux.conf
 
 rm -rf ~/.vim
-cp -r ${PWD}/vim/* ~/.vim
+cp -r ${PWD}/vim/ ~/.vim
 
 echo "done."
