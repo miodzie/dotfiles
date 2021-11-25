@@ -22,6 +22,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 
+Plug 'hashivim/vim-terraform'
+
 " Neovim Tree shitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -138,7 +140,7 @@ inoremap <silent> <F5> <C-R>=strftime("%m/%d/%y %H:%M:%S")<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
-nnoremap <silent> <F2> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<cr>
+nnoremap <silent> <F2> :set relativenumber!<CR> 
 
 "Make it easier to indent a visual selection several times.  
 xnoremap > >gv
@@ -306,7 +308,6 @@ command! Todo call s:todo()
 set relativenumber 
 set clipboard=unnamedplus 
 set number
-
 
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr> 
