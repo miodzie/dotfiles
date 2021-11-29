@@ -13,10 +13,10 @@ CORRECT_EMAIL="miodzie@protonmail.com"
 # fi
 # if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
 # then
-#     export GIT_AUTHOR_NAME="$CORRECT_NAME"
-#     export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+    export GIT_AUTHOR_NAME="$CORRECT_NAME"
+    export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
 # fi
-' --tag-name-filter cat -- --branches --tags
+' --tag-name-filter cat -- --branches --tags --force
 
 # then: git push --force --tags origin 'refs/heads/*'
 # or only selected references of the branches: git push --force --tags origin 'refs/heads/develop'
