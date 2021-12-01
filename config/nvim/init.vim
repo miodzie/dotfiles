@@ -27,6 +27,9 @@ Plug 'hashivim/vim-terraform'
 " Neovim Tree shitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+Plug 'editorconfig/editorconfig-vim'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
 " telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -48,6 +51,8 @@ let test#strategy = "neovim"
 if has('nvim')
     tmap <C-o> <C-\><C-n>
 endif
+let test#php#phpunit#executable = 'php artisan test'
+
 
 " Our one true God
 Plug 'tpope/vim-vinegar'
@@ -64,6 +69,7 @@ let g:AutoPairsFlyMode = 0 "0 is default
 " Visuals
 Plug 'airblade/vim-gitgutter' 
 Plug 'morhetz/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
 
 Plug 'junegunn/goyo.vim'
 nnoremap <Leader>G :Goyo<CR>
@@ -322,6 +328,7 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+" autocmd Filetype php setlocal tabstop=4 shiftwidth=4
 set copyindent 
 set smarttab 
 set lbr
