@@ -16,6 +16,8 @@
 " So it begins...
 let mapleader = ','
 
+" Plugins {{{
+
 call plug#begin('~/.local/share/nvim/plugged') 
 
 " Plebvim lsp Plugins
@@ -97,8 +99,10 @@ call plug#end()
 lua require("plugins")
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, indent = { enable = true }}
 
+"}}}
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
+" => General {{{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible                                    
 filetype plugin on
@@ -122,8 +126,10 @@ set backspace=indent,eol,start " Allow backspace beyond insertion point
 set autoread
 set undofile
 
+"}}}
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Syntax, Language specific, auto completion.
+" => Syntax, Language specific, auto completion. {{{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " if hidden is not set, TextEdit might fail.
 set hidden 
@@ -143,8 +149,10 @@ inoremap <silent> <F4> <C-R>=strftime("11/20/21 03:35:43%m/%d/%y %H:%M:%S")<CR>
 nnoremap <silent> <F5> "=strftime("%m/%d/%y %H:%M:%S")<CR>P
 inoremap <silent> <F5> <C-R>=strftime("%m/%d/%y %H:%M:%S")<CR>
 
+"}}}
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Mappings
+" => Mappings {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 nnoremap <silent> <F2> :set relativenumber!<CR> 
 
@@ -307,9 +315,10 @@ function! s:todo() abort
     endif
 endfunction
 command! Todo call s:todo()
+"}}}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing
+" => Editing {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 set relativenumber 
 set clipboard=unnamedplus 
@@ -317,9 +326,10 @@ set number
 
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr> 
+"}}}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related.
+" => Text, tab and indent related. {{{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set ignorecase              " Case insensitive
 set smartcase               " Lets you search for ALL CAPS 
@@ -350,9 +360,9 @@ vnoremap <space> zf
 " augroup END
 
 map <F7> gg=G<C-o><C-o>
-
+"}}}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors, Visuals, and Fonts.
+" => Colors, Visuals, and Fonts. {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 syntax enable 
 set termguicolors
@@ -378,9 +388,10 @@ augroup vimrc_todo
                 \ containedin=.*Comment,vimCommentTitle
 augroup END
 hi def link MyTodo Todo
+"}}}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs and buffers.
+" => Moving around, tabs and buffers. {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 set hlsearch
 set incsearch
@@ -428,9 +439,10 @@ nmap <C-j> <C-W><C-J>
 nmap <C-k> <C-W><C-K>
 nmap <C-h> <C-W><C-H>
 nmap <C-l> <C-W><C-L>
+"}}}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Autocmd.
+" => Autocmd. {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 " Resize panes when window/terminal gets resize
 autocmd VimResized * :wincmd =
@@ -450,6 +462,7 @@ augroup END
 " Remember info about open buffers on close
 "Disabled because it's annoying when you have multiple open sessions
 "set viminfo^=% 
+"}}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc.
