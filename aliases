@@ -147,8 +147,8 @@ alias trash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -r
 # (useful when executing time-consuming commands)
 alias badge="tput bel"
 
-alias vim="nvim"
-alias vi="nvim"
+# alias vim="nvim"
+# alias vi="nvim"
 alias ts="npx ts-node"
 alias pm="npx pm2"
 
