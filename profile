@@ -16,6 +16,5 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-[ -f ~/.aliases ]; source ~/.aliases;
 export LESS=-Rj.5
 export EDITOR="vim" 
