@@ -353,6 +353,7 @@ set foldmethod=syntax
 nnoremap <space> za
 vnoremap <space> zf 
 " This is causing fzf errors?
+" remember folds
 " augroup remember_folds
 "   autocmd!
 "   autocmd BufWinLeave * mkview
