@@ -11,4 +11,7 @@ cp -r ${PWD}/vim/ ~/.vim
 rm -rf ~/.profile
 cp -r ${PWD}/profile ~/.profile
 
+rm -rf ~/.aliases
+cp -r ${PWD}/aliases ~/.aliases
+
 echo "done."
