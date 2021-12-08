@@ -73,7 +73,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
 Plug 'ajmwagar/vim-deus'
 " Plug 'gruvbox-community/gruvbox'
-" Plug 'vim-airline/vim-airline'
 
 Plug 'junegunn/goyo.vim'
 nnoremap <Leader>G :Goyo<CR>

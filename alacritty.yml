@@ -129,7 +129,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 16.0
+  size: 20.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -597,6 +597,7 @@ mouse:
 key_bindings:
   - { key: F11, action: ToggleFullscreen }
   - { key: N, mods: Shift|Control, action: SpawnNewInstance }
+  - { key: N, mods: Command, action: CreateNewWindow }
 
     # Mac shit
   - { key: A,        mods: Alt,     chars: "\x1ba"                       }
@@ -790,5 +791,6 @@ schemes:
       magenta: '#c858e9'
       cyan:    '#2bcec2'
       white:   '#ffffff'
-# ...
+
 colors: *deus
+# colors: *gruvbox_material_hard_dark
