@@ -55,13 +55,15 @@ if type rbenv > /dev/null; then
     }
 fi
 # Lazy load ruby too
-# function ruby() {
-#     unset -f ruby
-#     if [ -z ${RBENV_SHELL} ]; then eval "$(command rbenv init - --no-rehash)"; fi
-#     ruby $@
-# }
-# meh
-if [ -z ${RBENV_SHELL} ]; then eval "$(command rbenv init - --no-rehash)"; fi
+function ruby() {
+    # if rbenv wasn't loaded yet, load it.
+    if [[ $(type ruby) == *"function"* ]]; then
+      rbenv > /dev/null 2>&1
+    fi
+    unset -f ruby
+    if [ -z ${RBENV_SHELL} ]; then eval "$(command rbenv init - --no-rehash)"; fi
+    ruby $@
+}
 
 # Lazy load pyenv
 export PYENV_ROOT="$HOME/.pyenv"

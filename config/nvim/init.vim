@@ -376,6 +376,7 @@ let g:gruvbox_contrast_dark = 'medium'
 colorscheme deus
 set background=dark    " Setting dark mode
 let g:deus_termcolors=256
+
 " True color stuff
 set t_Co=256
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
