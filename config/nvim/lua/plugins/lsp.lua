@@ -51,8 +51,15 @@ nvim_lsp.gopls.setup{
     },
 }
 nvim_lsp.intelephense.setup{ on_attach=on_attach }
-nvim_lsp.solargraph.setup{ on_attach=on_attach }
-nvim_lsp.vuels.setup{}
-nvim_lsp.tailwindcss.setup{}
+nvim_lsp.solargraph.setup{ 
+  on_attach=on_attach,
+  settings = {
+    solargraph = {
+      diagnostics = false,
+    },
+  },
+}
+nvim_lsp.vuels.setup{ on_attach=on_attach }
+nvim_lsp.tailwindcss.setup{ on_attach=on_attach }
 nvim_lsp.tsserver.setup{ on_attach=on_attach }
 -- nvim_lsp.sorbet.setup{}
