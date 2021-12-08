@@ -101,3 +101,4 @@ function npm() {
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 
+export TERM_ITALICS=true
