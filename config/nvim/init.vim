@@ -116,7 +116,7 @@ set complete=.,w,b,u,t,i,kspell "Set our desired autocompletion matching
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
 " Hides bar, default is 2
-" set laststatus=0
+set laststatus=0
 
 set showcmd "Show (partial) command in the status line.  
 set magic " For regular expressions turn magic on 
