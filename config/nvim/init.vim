@@ -71,7 +71,9 @@ let g:AutoPairsFlyMode = 0 "0 is default
 " Visuals
 Plug 'airblade/vim-gitgutter' 
 Plug 'morhetz/gruvbox'
+Plug 'ajmwagar/vim-deus'
 " Plug 'gruvbox-community/gruvbox'
+" Plug 'vim-airline/vim-airline'
 
 Plug 'junegunn/goyo.vim'
 nnoremap <Leader>G :Goyo<CR>
@@ -89,8 +91,8 @@ augroup vimwikigroup
     " automatically update links on read diary
     autocmd BufRead,BufNewFile diary.wiki VimwikiDiaryGenerateLinks
 augroup end
-hi link VimwikiHeader1 GruvboxYellowBold
-hi link VimwikiHeader3 GruvboxAquaBold
+" hi link VimwikiHeader1 GruvboxYellowBold
+" hi link VimwikiHeader3 GruvboxAquaBold
 let g:vimwiki_list = [{'auto_tags': 1}]
 
 call plug#end()
@@ -115,7 +117,7 @@ set complete=.,w,b,u,t,i,kspell "Set our desired autocompletion matching
 " hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
 " Hides bar, default is 2
-set laststatus=0
+" set laststatus=0
 
 set showcmd "Show (partial) command in the status line.  
 set magic " For regular expressions turn magic on 
@@ -371,7 +373,7 @@ set termguicolors
 let g:gruvbox_italic=1
 let g:gruvbox_invert_selection=0
 let g:gruvbox_contrast_dark = 'medium'
-colorscheme gruvbox
+colorscheme deus
 set background=dark
 " For transparent term
 " hi Normal guibg=NONE ctermbg=NONE

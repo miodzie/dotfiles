@@ -38,8 +38,6 @@ local on_attach = function(client, bufnr)
 
 end
 
-nvim_lsp.tsserver.setup{ on_attach=on_attach }
-nvim_lsp.intelephense.setup{ on_attach=on_attach }
 nvim_lsp.gopls.setup{
     on_attach=on_attach,
     cmd = {"gopls", "serve"},
@@ -52,5 +50,9 @@ nvim_lsp.gopls.setup{
         },
     },
 }
+nvim_lsp.intelephense.setup{ on_attach=on_attach }
 nvim_lsp.solargraph.setup{ on_attach=on_attach }
+nvim_lsp.vuels.setup{}
+nvim_lsp.tailwindcss.setup{}
+nvim_lsp.tsserver.setup{ on_attach=on_attach }
 -- nvim_lsp.sorbet.setup{}
