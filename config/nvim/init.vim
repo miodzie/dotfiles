@@ -21,39 +21,39 @@ let mapleader = ','
 call plug#begin('~/.local/share/nvim/plugged') 
 
 " Plebvim lsp Plugins
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'hrsh7th/nvim-compe'
 
 Plug 'hashivim/vim-terraform'
 
 " Neovim Tree shitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-Plug 'editorconfig/editorconfig-vim'
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+" Plug 'editorconfig/editorconfig-vim'
+" let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " telescope
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
 
 " Using Lua functions
-nnoremap <leader>f <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap ; <cmd>lua require('telescope.builtin').buffers()<cr>
+" nnoremap <leader>f <cmd>lua require('telescope.builtin').find_files()<cr>
+" nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
+" nnoremap ; <cmd>lua require('telescope.builtin').buffers()<cr>
 " nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " Languages, snippets
-Plug 'vim-test/vim-test'
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
-let test#strategy = "neovim"
-if has('nvim')
-    tmap <C-o> <C-\><C-n>
-endif
-let test#php#phpunit#executable = 'php artisan test'
+" Plug 'vim-test/vim-test'
+" nmap <silent> t<C-n> :TestNearest<CR>
+" nmap <silent> t<C-f> :TestFile<CR>
+" nmap <silent> t<C-s> :TestSuite<CR>
+" nmap <silent> t<C-l> :TestLast<CR>
+" nmap <silent> t<C-g> :TestVisit<CR>
+" let test#strategy = "neovim"
+" if has('nvim')
+    " tmap <C-o> <C-\><C-n>
+" endif
+" let test#php#phpunit#executable = 'php artisan test'
 
 
 " Our one true God
@@ -65,23 +65,20 @@ Plug 'tpope/vim-commentary'
 nmap <C-_> gcc
 vmap <C-_> gc
 
-Plug 'jiangmiao/auto-pairs'
-let g:AutoPairsFlyMode = 0 "0 is default
+" Plug 'jiangmiao/auto-pairs'
+" let g:AutoPairsFlyMode = 0 "0 is default
 
 " Visuals
-Plug 'airblade/vim-gitgutter' 
+" Plug 'airblade/vim-gitgutter' 
 Plug 'morhetz/gruvbox'
 Plug 'ajmwagar/vim-deus'
 " Plug 'gruvbox-community/gruvbox'
 
-Plug 'junegunn/goyo.vim'
-nnoremap <Leader>G :Goyo<CR>
-
-Plug 'scrooloose/nerdtree'
-nmap \F :NERDTreeFind 
-nmap \e :NERDTreeToggle<CR><C-w>=
-let NERDTreeHijackNetrw = 0
-let NERDTreeShowHidden = 1
+" Plug 'scrooloose/nerdtree'
+" nmap \F :NERDTreeFind 
+" nmap \e :NERDTreeToggle<CR><C-w>=
+" let NERDTreeHijackNetrw = 0
+" let NERDTreeShowHidden = 1
 
 Plug 'vimwiki/vimwiki' 
 command! Diary VimwikiDiaryIndex
@@ -97,8 +94,9 @@ let g:vimwiki_list = [{'auto_tags': 1}]
 call plug#end()
 
 
-lua require("plugins")
-lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, indent = { enable = true }}
+" lua require("plugins")
+" lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, indent = { enable = true }}
+
 
 "}}}
 
@@ -109,7 +107,7 @@ set nocompatible
 filetype plugin on
 
 " Marks should go to the column, not just the line. Why isn't this the default?
-nnoremap ' ` 
+nnoremap ' `
 set complete=.,w,b,u,t,i,kspell "Set our desired autocompletion matching
 
 " set cursorline
