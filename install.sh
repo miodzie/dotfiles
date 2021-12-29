@@ -55,4 +55,4 @@ then
     echo "Put .vimrc machine specific settings in .vimrc_specific"
 fi
 
-git config --global core.excludesfile ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore
