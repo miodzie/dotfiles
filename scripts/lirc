@@ -1,0 +1,4 @@
+#!/bin/bash
+TIMESTAMP=$( date +"%s" )
+mkdir -p $HOME/irc-logs/weechat/$TIMESTAMP
+tar -czf $HOME/irc-logs/weechat/$TIMESTAMP $HOME/.weechat/logs

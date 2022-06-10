@@ -1,0 +1,9 @@
+*
+!.gitignore
+!snippets/*
+!snippets/pdv/*
+!snippets/pdv
+!plugins.vim
+!colors/
+!autoload/
+

@@ -1,0 +1,108 @@
+{
+  "class …": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} ${2:extends ${3:AnotherClass}} ${4:implements ${5:Interface}}",
+      "{",
+      "\t$0",
+      "}",
+      ""
+    ],
+    "description": "Class definition"
+  },
+  "function __construct": {
+    "prefix": "con",
+    "body": [
+      "${1:public} function __construct(${2:${3:Type} \\$${4:var}${5: = ${6:null}}}) {",
+      "\t\\$this->${4:var} = \\$${4:var};$0",
+      "}"
+    ]
+  },
+  "function …": {
+    "prefix": "fun",
+    "body": [
+      "${1:public }function ${2:FunctionName}($3)",
+      "{",
+      "\t${0:// ...}",
+      "}"
+    ],
+    "description": "Function"
+  },
+  "public method": {
+    "prefix": "met",
+    "body": [
+      "public function ${2:method}($3)",
+      "{",
+      "\t${0:// ...}",
+      "}"
+    ],
+    "description": "public method"
+  },
+  "private method": {
+    "prefix": "pmet",
+    "body": [
+      "private function ${2:method}($3)",
+      "{",
+      "\t${0:// ...}",
+      "}"
+    ],
+    "description": "private method"
+  },
+  "test method": {
+    "prefix": "test",
+    "body": [
+      "public function test${2}()",
+      "{",
+      "\t${0:// ...}",
+      "}"
+    ],
+    "description": "test method"
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": [
+      "function ($1) {",
+      "\t${0:// ...}",
+      "}"
+    ],
+    "description": "closure"
+  },
+  "if …": {
+    "prefix": "if",
+    "body": ["if (${1:condition}) {", "\t${0:// code...}", "}"],
+    "description": "If block"
+  },
+  "$… = ( … ) ? … : …": {
+    "prefix": "if?",
+    "body": "\\$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b} ;",
+    "description": "Ternary conditional assignment"
+  },
+  "Throw Exception": {
+    "prefix": "throw",
+    "body": [
+      "throw new $1Exception(${2:\"${3:Error Processing Request}\"}${4:, ${5:1}});"
+    ],
+    "description": "Throw exception"
+  },
+  "$this->…": {
+    "prefix": "this",
+    "body": "\\$this->$0;",
+    "description": "$this->..."
+  },
+  "@var": {
+    "prefix": "@var",
+    "body": ["/** @var ${1:Type} ${2:$var} */"],
+    "description": "@var docblock"
+  },
+  "Try Catch Block": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t${1://code...}",
+      "} catch (${2:\\Throwable} ${3:\\$th}) {",
+      "\t${4://throw \\$th;}",
+      "}"
+    ],
+    "description": "Try catch block"
+  }
+}

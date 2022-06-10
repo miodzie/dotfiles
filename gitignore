@@ -1,0 +1,7 @@
+tags
+.php_cs.cache
+.DS_Store
+.env.testing
+*.weechatlog
+sec.conf
+gitconfig
