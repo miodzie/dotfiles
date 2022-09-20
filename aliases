@@ -1,3 +1,4 @@
+alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 # terraform 
 alias tf='terraform'
 
@@ -158,3 +159,4 @@ timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
+

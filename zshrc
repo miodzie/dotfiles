@@ -36,7 +36,7 @@ fi
 
 # Composer + PHP
 export PATH="$HOME/.composer/vendor/bin:$PATH"
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 # Cargo + Rust
 if [ -d $HOME/.cargo/env ]; then

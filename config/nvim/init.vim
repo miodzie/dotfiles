@@ -17,7 +17,6 @@
 let mapleader = ','
 
 " Plugins {{{
-
 call plug#begin('~/.local/share/nvim/plugged') 
 
 " Plebvim lsp Plugins
@@ -347,7 +346,7 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-" autocmd Filetype php setlocal tabstop=4 shiftwidth=4
+autocmd Filetype php setlocal tabstop=4 shiftwidth=4
 set copyindent 
 set smarttab 
 set lbr
@@ -381,7 +380,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_invert_selection=0
 let g:gruvbox_contrast_dark = 'medium'
 
-colorscheme deus
+colorscheme gruvbox
 set background=dark    " Setting dark mode
 let g:deus_termcolors=256
 

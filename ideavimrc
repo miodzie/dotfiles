@@ -1,6 +1,14 @@
 set surround
 set easymotion
 set multiple-cursors
+set NERDTree
+set commentary
+
+nmap \F :NERDTreeFind
+nmap \e :NERDTreeToggle<CR><C-w>=
+let NERDTreeHijackNetrw = 0
+let NERDTreeShowHidden = 1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                _
 "         __   _(_)_ __ ___  _ __ ___
@@ -32,6 +40,9 @@ nmap ]<space> o<ESC>k
 xnoremap > >gv
 xnoremap < <gv
 
+nnoremap <leader>v :action ShowBookmarks<cr>
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -55,3 +66,11 @@ nmap <C-j> <C-W><C-J>
 nmap <C-k> <C-W><C-K>
 nmap <C-h> <C-W><C-H>
 nmap <C-l> <C-W><C-L>
+
+
+" Quit
+inoremap <C-Q>     <esc>:q<cr>
+nnoremap <C-Q>     :q<cr>
+vnoremap <C-Q>     <esc>
+" nnoremap <Leader>q :q<cr>
+nnoremap <Leader>Q :qa!<cr>
