@@ -379,9 +379,10 @@ set termguicolors
 let g:gruvbox_italic=1
 let g:gruvbox_invert_selection=0
 let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_contrast_light = 'soft'
 
 colorscheme gruvbox
-set background=dark    " Setting dark mode
+set background=light    " Setting dark mode
 let g:deus_termcolors=256
 
 " True color stuff
