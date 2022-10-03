@@ -82,6 +82,7 @@ vmap <C-_> gc
 Plug 'morhetz/gruvbox'
 Plug 'ajmwagar/vim-deus'
 " Plug 'gruvbox-community/gruvbox'
+Plug 'mhartington/oceanic-next'
 
 " Plug 'scrooloose/nerdtree'
 " nmap \F :NERDTreeFind 
@@ -381,8 +382,10 @@ let g:gruvbox_invert_selection=0
 let g:gruvbox_contrast_dark = 'medium'
 let g:gruvbox_contrast_light = 'soft'
 
-colorscheme gruvbox
-set background=light    " Setting dark mode
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
+set background=dark
 let g:deus_termcolors=256
 
 " True color stuff
