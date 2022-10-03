@@ -83,6 +83,7 @@ Plug 'morhetz/gruvbox'
 Plug 'ajmwagar/vim-deus'
 " Plug 'gruvbox-community/gruvbox'
 Plug 'mhartington/oceanic-next'
+Plug 'marko-cerovac/material.nvim'
 
 " Plug 'scrooloose/nerdtree'
 " nmap \F :NERDTreeFind 
@@ -384,7 +385,8 @@ let g:gruvbox_contrast_light = 'soft'
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+let g:material_style = "oceanic"
+colorscheme material
 set background=dark
 let g:deus_termcolors=256
 
