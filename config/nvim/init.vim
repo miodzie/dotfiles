@@ -155,16 +155,17 @@ set signcolumn=yes
 
 nnoremap <silent> <F4> gggqG
 nnoremap <silent> <F4> gggqG
-inoremap <silent> <F4> <C-R>=strftime("11/20/21 03:35:43%m/%d/%y %H:%M:%S")<CR>
 nnoremap <silent> <F5> "=strftime("%m/%d/%y %H:%M:%S")<CR>P
 inoremap <silent> <F5> <C-R>=strftime("%m/%d/%y %H:%M:%S")<CR>
+nnoremap <silent> <F2> :.!git rev-parse --abbrev-ref HEAD<CR>A 
+inoremap <silent> <F2> <Esc>:.!git rev-parse --abbrev-ref HEAD<CR>A 
 
 "}}}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
-nnoremap <silent> <F2> :set relativenumber!<CR> 
+" nnoremap <silent> <F2> :set relativenumber!<CR> 
 
 "Make it easier to indent a visual selection several times.  
 xnoremap > >gv
