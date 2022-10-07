@@ -30,7 +30,7 @@ alias gclean="git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n
 alias gcleanr="git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
 alias gc="git checkout"
 alias gupdate="git fetch -a && git pull -a"
-alias meh='git commit -m "$(curl -s http://whatthecommit.com/index.txt)'
+alias meh="git commit -m '$(curl -s http://whatthecommit.com/index.txt)'"
 
 # gitflow
 alias gfl="git flow"
