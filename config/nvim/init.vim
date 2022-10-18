@@ -346,10 +346,10 @@ set ignorecase              " Case insensitive
 set smartcase               " Lets you search for ALL CAPS 
 set autoindent              " Auto indents new lines.
 set expandtab 
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-autocmd Filetype php setlocal tabstop=4 shiftwidth=4
+set tabstop=8
+set shiftwidth=8
+set softtabstop=8
+" autocmd Filetype php setlocal tabstop=4 shiftwidth=4
 set copyindent 
 set smarttab 
 set lbr
