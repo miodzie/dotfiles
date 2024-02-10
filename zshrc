@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME='eastwood'
+ZSH_THEME='eastwood' # eastwood, amuse, bureau
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh 
 export LANG=en_US.UTF-8 
@@ -84,22 +84,22 @@ function python() {
 
 
 # Lazy load nvm, npm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-function nvm() {
-    unset -f nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-    nvm $@
-}
-function npm() {
-    unset -f npm
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-    npm $@
-}
-function yarn() {
-    unset -f yarn
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-    yarn $@
-}
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# function nvm() {
+#     unset -f nvm
+#     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#     nvm $@
+# }
+# function npm() {
+#     unset -f npm
+#     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#     npm $@
+# }
+# function yarn() {
+#     unset -f yarn
+#     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+#     yarn $@
+# }
 
 # load exploits
 # export PATH="$HOME/.npm-global/bin:$PATH"

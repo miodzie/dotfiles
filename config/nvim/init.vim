@@ -87,30 +87,6 @@ nnoremap <leader>tt <cmd>lua require('telescope').extensions.git_worktree.git_wo
 " <c-d> - deletes that worktree
 " <c-f> - toggles forcing of the next deletion
 
-Plug 'ThePrimeagen/harpoon'
-nnoremap <leader>x <cmd>lua require('harpoon.mark').add_file()<cr>
-nnoremap <leader>v <cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>
-nnoremap <leader>1 <cmd>lua require('harpoon.ui').nav_file(1)<cr>
-nnoremap <leader>2 <cmd>lua require('harpoon.ui').nav_file(2)<cr>
-nnoremap <leader>3 <cmd>lua require('harpoon.ui').nav_file(3)<cr>
-nnoremap <leader>4 <cmd>lua require('harpoon.ui').nav_file(4)<cr>
-nnoremap <leader>5 <cmd>lua require('harpoon.ui').nav_file(5)<cr>
-nnoremap <leader>b <cmd>lua require('harpoon.ui').nav_prev()<cr>
-nnoremap <leader>n <cmd>lua require('harpoon.ui').nav_next()<cr>
-
-" Languages, snippets
-Plug 'vim-test/vim-test'
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
-let test#strategy = "neovim"
-if has('nvim')
-    tmap <C-o> <C-\><C-n>
-endif
-let test#php#phpunit#executable = './vendor/bin/phpunit'
-
 " Our one true God
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
@@ -135,12 +111,12 @@ Plug 'jiangmiao/auto-pairs'
 " to .vimrc, if the key is empty string '', then the shortcut will be disabled.
 
 " Visuals
-Plug 'airblade/vim-gitgutter' 
+Plug 'miodzie/vim-gitgutter' 
 " Plug 'morhetz/gruvbox'
-Plug 'ajmwagar/vim-deus'
-Plug 'joshdick/onedark.vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'gruvbox-community/gruvbox'
+Plug 'miodzie/vim-deus'
+"Plug 'arcticicestudio/nord-vim'
+"Plug 'gruvbox-community/gruvbox'
+Plug 'miodzie/monokai-pro.nvim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 " Plug 'edkolev/tmuxline.vim'
@@ -459,7 +435,55 @@ map <F7> gg=G<C-o><C-o>
 syntax on 
 set termguicolors
 set background=dark
-colorscheme gruvbox
+lua << EOF
+require("monokai-pro").setup({
+  transparent_background = false,
+  terminal_colors = true,
+  devicons = true, -- highlight the icons of `nvim-web-devicons`
+  styles = {
+    comment = { italic = true },
+    keyword = { italic = true }, -- any other keyword
+    type = { italic = true }, -- (preferred) int, long, char, etc
+    storageclass = { italic = true }, -- static, register, volatile, etc
+    structure = { italic = true }, -- struct, union, enum, etc
+    parameter = { italic = true }, -- parameter pass in function
+    annotation = { italic = true },
+    tag_attribute = { italic = true }, -- attribute of tag in reactjs
+  },
+  filter = "octagon", -- classic | octagon | pro | machine | ristretto | spectrum
+  -- Enable this will disable filter option
+  day_night = {
+    enable = false, -- turn off by default
+    day_filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+    night_filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
+  },
+  inc_search = "background", -- underline | background
+  background_clear = {
+    -- "float_win",
+    "toggleterm",
+    "telescope",
+    -- "which-key",
+    "renamer",
+    "notify",
+    "nvim-tree",
+    -- "neo-tree",
+    -- "bufferline", -- better used if background of `neo-tree` or `nvim-tree` is cleared
+  },-- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree", "nvim-tree", "bufferline"
+  plugins = {
+    bufferline = {
+      underline_selected = false,
+      underline_visible = false,
+    },
+    indent_blankline = {
+      context_highlight = "default", -- default | pro
+      context_start_underline = false,
+    },
+  },
+  ---@param c Colorscheme
+  override = function(c) end,
+})
+EOF
+colorscheme deus
 let g:deus_termcolors=256
 " For transparent term
 " hi Normal guibg=NONE ctermbg=NONE

@@ -18,7 +18,7 @@
 --langmap=php:.engine.inc.module.theme.install.php
 --totals=yes
 --tag-relative=yes
---PHP-kinds=+cfit-va
+--PHP-kinds=+fi-v
 --tag-relative=yes
 --regex-PHP=/abstract class ([^ ]*)/\1/c/
 --regex-PHP=/interface ([^ ]*)/\1/c/

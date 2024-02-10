@@ -55,3 +55,8 @@ nmap <C-j> <C-W><C-J>
 nmap <C-k> <C-W><C-K>
 nmap <C-h> <C-W><C-H>
 nmap <C-l> <C-W><C-L>
+set clipboard^=ideaput
+
+" https://stackoverflow.com/a/45109772
+imap <C-n> <ESC>:action HippieCompletion<CR>a
+imap <C-p> <ESC>:action HippieBackwardCompletion<CR>a

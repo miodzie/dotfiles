@@ -34,7 +34,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 end
 
 -- for denols
@@ -76,6 +76,10 @@ vim.g.markdown_fenced_languages = {
 nvim_lsp.denols.setup{
   on_attach=on_attach,
   -- filetypes= { "vue", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
+}
+
+nvim_lsp.clangd.setup{
+  on_attach=on_attach
 }
 
 require('lspconfig')['solargraph'].setup {

@@ -1,10 +1,5 @@
 #!/bin/sh
-echo -e "--Make sure you are running this from the repo path--\n\n"
-read -p "This will override your config files [Y/n]" -n 1 -r
-echo    # move to a new line
 
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
     BASE="$(cd "$(dirname "$0")" && pwd)"
     # All dotfiles
     for file in `find ${BASE} -maxdepth 1 -not -name '.*' -not -name install.sh -not -name bin -not -name tasks -not -name etc -not -name README.md -not -name LICENSE -type f`; do
@@ -57,6 +52,5 @@ then
     touch ~/.vimrc_specific
     echo "Puts secrets in ~/.secrets"
     echo "Put .vimrc machine specific settings in .vimrc_specific"
-fi
 
 git config --global core.excludesfile ~/.gitignore
