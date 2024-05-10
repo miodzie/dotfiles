@@ -1,4 +1,5 @@
 #!/bin/sh
+# TODO: redo this mess
 
     BASE="$(cd "$(dirname "$0")" && pwd)"
     # All dotfiles
@@ -54,3 +55,4 @@
     echo "Put .vimrc machine specific settings in .vimrc_specific"
 
 git config --global core.excludesfile ~/.gitignore
+

@@ -1,2 +1,3 @@
 #!/bin/bash
 date +%s|pbcopy -selection clipboard  
+

@@ -3,3 +3,4 @@ if [[ "$TERM" =~ "tmux".* ]]; then
 else
         ruby ~/scripts/seeyou.rb; sleep 2
 fi
+

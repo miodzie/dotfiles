@@ -1,67 +1,15 @@
-# terraform 
-alias tf='terraform'
-
-#tmux
-alias tm='tmux'
-alias tma='tmux a '
-
-alias pm='podman'
-alias pc='podman-compose'
-alias pd='podman-compose'
-
-# docker 
-# alias docker="podman"
-alias d="docker"
-alias dk="docker container"
-alias dv="docker volume"
-alias de="docker exec -it"
-alias dockerstop='docker stop $(docker ps -a -q)'
-alias dockerrm='docker rm $(docker ps -a -q)'
-
-# docker-compose
-alias dc="docker-compose"
-alias dce="docker-compose exec"
-
-# git 
-alias gl="git pull"
-alias whoops="git reset --hard HEAD"
-alias whops="git reset --hard HEAD"
-alias ga="git add"
-alias gall="git add --a"
-alias gk='git commit --verbose'
-alias gs='git status'
-alias gp='git push'
-alias gsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
-alias gclean="git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
-alias gcleanr="git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
-alias gc="git checkout"
-alias gupdate="git fetch -a && git pull -a"
-alias gmc="git merge --continue"
-alias gma="git merge --abort"
-
-# PHPUnit
-alias p='phpunit'
-alias pf='phpunit --filter '
-alias phpunit='php vendor/bin/phpunit'
-
-# Ruby
-alias rb="ruby"
-
-# PHP 
-alias cmp='composer'
-alias cmpd='composer dump'
-
-# Laravel
-alias art='php artisan'
+alias reload="clear && exec $SHELL" # Reload the shell
+alias sudo="sudo " # Enable aliases to be sudo’ed
 
 alias ..='cd ..'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
 alias .....='cd ../../../../../'
 
-alias pls='sudo $(fc -ln -1)'
 alias please='sudo $(fc -ln -1)'
+alias pls='please'
 
+# TODO: Review these
 #-------------------------------------------------------------
 # The 'ls' family
 #-------------------------------------------------------------
@@ -82,69 +30,43 @@ alias lr='ll -R'           #  Recursive ls.
 alias la='ll -A'           #  Show hidden files.
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 
+# docker 
+# alias docker="podman" -- `apt install podman-docker` instead
+alias d="docker"
+alias dk="docker container"
+alias dv="docker volume"
+alias de="docker exec -it"
+alias dockerstop='docker stop $(docker ps -a -q)'
+alias dockerrm='docker rm $(docker ps -a -q)'
 
-#-------------------------------------------------------------
-# Spelling typos
-#-------------------------------------------------------------
+# docker-compose
+alias dc="docker compose"
 
-# alias sl='ls'
-alias xs='cd'
-alias vf='cd'
-alias moer='more'
-alias moew='more'
-alias kk='ll'
+# git 
+# TODO: MOVE TO GIT ALIASES
+alias gsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
+alias gclean="git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+alias gcleanr="git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
+alias gupdate="git fetch -a && git pull -a"
+
 
 
 #-------------------------------------------------------------
 # Misc
 #-------------------------------------------------------------
 
+# can this be a conf?
 alias grep='grep --color=auto'
 
-alias sha1='openssl sha1'
-
+# todo: review and use -pv manually
 alias mkdir='mkdir -pv'
-
-# alias diff='colordiff'
-# alias mount='mount |column -t'
 
 alias h='history'
 alias j='jobs -l'
 
-alias update='sudo apt-get update && sudo apt-get upgrade'
-alias apt-get='sudo apt-get'
-
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias myip='curl icanhazip.com'
 
-alias count="ls -1 | wc -l"
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Reload the shell
-alias reload="clear && exec $SHELL"
-
-# Enable aliases to be sudo’ed
-alias sudo="sudo "
-
-# Mac
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
-# I stole this and never use it it's kinda scary i dunno mang
-# Empty the Trash on all mounted volumes and the main HDD
-# Also, clear Apple’s System Logs to improve shell startup speed
-# Finally, clear download history from quarantine. https://mths.be/bum
-alias trash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
-
-# Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
-# (useful when executing time-consuming commands)
-alias badge="tput bel"
-
-alias ts="npx ts-node"
-
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
+# TODO: linux,osx specific configs
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'

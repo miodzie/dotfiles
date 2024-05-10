@@ -19,3 +19,4 @@ fi
 export LESS=-Rj.5
 export EDITOR="vim" 
 . "$HOME/.cargo/env"
+
