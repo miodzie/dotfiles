@@ -14,3 +14,4 @@ Clone the repository, then run `install.sh`.
 - [ ] add ".my_zshrc" to keep fresh installed .zshrc files (.bashrc,
       .zshrc often get polluted when installing new software, annoying)
 
+
