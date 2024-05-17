@@ -4,13 +4,8 @@ export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --no-ignore-vcs --follow --
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # tomasr/molokai
 export FZF_DEFAULT_OPTS='--color=bg+:#293739,bg:#1B1D1E,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672'
-# [ -f /usr/share/fzf/shell/key-bindings.zsh ] & source /usr/share/fzf/shell/key-bindings.zsh
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 . /usr/share/doc/fzf/examples/key-bindings.zsh
 
-trunc() {
-  cat /dev/stdin # | awk '{print $2 " " $3}'
-}
 
 fzf-ssh() {
   HOSTS=$(cat ~/hosts.txt)
@@ -26,5 +21,6 @@ alias sshf='fzf-ssh'
 zle -N fzf-ssh
 # TODO: fix after power10k migration
 # bindkey -s '^S' 'fzf-ssh^M'
+# bindkey -s '^s' 'fzf-ssh'
 alias fkill='ps -ef | fzf | awk '{print $2}' | xargs kill -9'
 

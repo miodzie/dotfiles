@@ -5,10 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
+#--# My config
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
-#--# My config
 bindkey -e # emacs keybind mode -- useful
 # search previous commands similar to what's currently in the prompt -- e.g. $ curl | <C-p>
 bindkey '^p' history-search-backward
@@ -24,11 +25,6 @@ alias c='clear'
 alias reload='clear && exec $SHELL'
 alias sudo="sudo " # allow aliases to be sudo'd
 alias ..='cd ..'
-
-# gobbless
-# eval "$(fzf --zsh)" # holy shit debian is so far behind in versions
-[ -f ~/.fzfrc ]; source ~/.fzfrc;
-
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -78,7 +74,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # Shell integrations
-# eval "$(fzf --zsh)" # TODO DEBIAN SO BEHIND
+[ -f ~/.fzfrc ]; source ~/.fzfrc;
+# eval "$(fzf --zsh)" # TODO: DEBIAN SO BEHIND
 # eval "$(zoxide init --cmd cd zsh)"
 
 #--# AUTO ADDED STUFF BELOW

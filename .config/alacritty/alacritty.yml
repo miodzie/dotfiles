@@ -1,4 +1,4 @@
-# TODO: move to .toml
+# TODO: move to .toml and remove comments 
 
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
@@ -875,4 +875,4 @@ schemes:
       cyan: '#6d96a5'
       white: '#aeb3bb'
 
-colors: *gruvbox
+colors: *deus
