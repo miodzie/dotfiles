@@ -1,8 +1,5 @@
 tags
 *.weechatlog
 tags
-.php_cs.cache
 .DS_Store
-
-gitconfig
-.env.testing
+.config/tmux/plugins

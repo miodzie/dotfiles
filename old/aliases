@@ -74,3 +74,4 @@ alias myip='curl icanhazip.com'
 # TODO: linux,osx specific configs
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+
