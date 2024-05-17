@@ -112,26 +112,26 @@ window:
 # Font configuration
 font:
   normal:
-    family: Comic Code
+    family: ComicCode Nerd Font
     style: Regular
 
   # Bold font face
   bold:
-    family: Comic Code
+    family: ComicCode Nerd Font
     style: Bold
 
   # Italic font face
   italic:
-    family: Comic Code
+    family: ComicCode Nerd Font
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: Comic Code
+    family: ComicCode Nerd Font
     style: Bold Italic
 
   # Point size
-  size: 14.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter

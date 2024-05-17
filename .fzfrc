@@ -20,7 +20,6 @@ alias sshf='fzf-ssh'
 
 zle -N fzf-ssh
 # TODO: fix after power10k migration
-# bindkey -s '^S' 'fzf-ssh^M'
-# bindkey -s '^s' 'fzf-ssh'
+# bindkey -s "^e" 'fzf-ssh^M'
 alias fkill='ps -ef | fzf | awk '{print $2}' | xargs kill -9'
 
