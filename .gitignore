@@ -1,5 +1,3 @@
 tags
-*.weechatlog
 tags
 .DS_Store
-.config/tmux/plugins
