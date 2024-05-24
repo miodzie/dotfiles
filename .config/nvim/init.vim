@@ -96,7 +96,7 @@ Plug 'tpope/vim-commentary'
 nmap <C-_> gcc
 vmap <C-_> gc
 
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 " let g:AutoPairsFlyMode = 0 "0 is default
 " System Shortcuts:
 "     <CR>  : Insert new indented line after return if cursor in blank brackets or quotes.

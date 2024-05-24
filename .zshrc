@@ -15,6 +15,7 @@ bindkey -e # emacs keybind mode -- useful
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+alias vim="nvim"
 export EDITOR='nvim'
 export PAGER='most'
 alias ls='ls --color'
@@ -26,6 +27,7 @@ alias reload='clear && exec $SHELL'
 alias sudo="sudo " # allow aliases to be sudo'd
 alias ..='cd ..'
 
+# Ah yes, auto git clone & source scripts. No problems here, no sir.
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -36,11 +38,6 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-# TODO: fork 
-# autoload -U compinit; compinit
-# zinit light Aloxaf/fzf-tab
-# zstyle ':completion:*' menu no
-# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Add in snippets
 zinit snippet OMZP::git
@@ -51,11 +48,6 @@ zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
-
-# Load completions (required for fzf-tab..)
-autoload -Uz compinit && compinit
-
-zinit cdreplay -q
 
 HISTSIZE=5000
 HISTFILE=~/.zsh_history # this is the default....
@@ -69,18 +61,13 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Completion style -- TODO: NOT WORKING!
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Shell integrations
 [ -f ~/.fzfrc ]; source ~/.fzfrc;
 # eval "$(fzf --zsh)" # TODO: DEBIAN SO BEHIND
-# eval "$(zoxide init --cmd cd zsh)"
+# eval "$(zoxide init --cmd cd zsh)" # TODO: z train deez phat fucking nutz
 
 #--# AUTO ADDED STUFF BELOW
-
 
