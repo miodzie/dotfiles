@@ -1,13 +1,9 @@
 require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "lua", "vim", "vimdoc", "query" },
   highlight = {
     enable = true,
-    -- PHP docblocks are whack, meh
-    -- additional_vim_regex_highlighting = true
+    additional_vim_regex_highlighting = false,
   },
-  incremental_selection = {
-    enable = true 
-  },
-  indent = {
-    enable = true
-  }
+  -- List of parsers to ignore installing (or "all")
+  ignore_install = { "javascript" }
 }

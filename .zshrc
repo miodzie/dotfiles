@@ -7,8 +7,11 @@ fi
 
 
 #--# My config
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
 
 bindkey -e # emacs keybind mode -- useful
 # search previous commands similar to what's currently in the prompt -- e.g. $ curl | <C-p>

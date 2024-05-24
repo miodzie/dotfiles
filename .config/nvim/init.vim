@@ -9,6 +9,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired' 
+Plug 'miodzie/vim-gitgutter' 
+nmap \g :GitGutterToggle<CR>
+nmap \G :GitGutterLineHighlightsToggle<CR>
 
 Plug 'miodzie/monokai-pro.nvim'
 
@@ -64,11 +67,20 @@ lua require('plugins')
 
 set cursorline " i unironically like this
 set relativenumber 
+"set autoindent=off
 set clipboard+=unnamedplus 
 set number
 set autowriteall 
 set splitbelow " switch to splits
 set splitright
+set tabstop=4
+set infercase
+set foldlevelstart=10
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set nofoldenable                     " Disable folding at startup.
+set noswapfile
+set signcolumn=yes
 
 " qq to record, Q to replay
 nnoremap Q @q

@@ -37,11 +37,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 end
 
--- for denols
-vim.g.markdown_fenced_languages = {
-  "ts=typescript",
-  "js=javascript"
-}
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
@@ -55,6 +50,7 @@ for _, lsp in pairs(servers) do
     }
   }
 end
+
 nvim_lsp.gopls.setup{
     on_attach=on_attach,
     cmd = {"gopls", "serve"},
@@ -68,6 +64,7 @@ nvim_lsp.gopls.setup{
     },
 }
 
+-- for denols
 vim.g.markdown_fenced_languages = {
   "ts=typescript",
   "js=javascript"
@@ -82,8 +79,3 @@ nvim_lsp.clangd.setup{
   on_attach=on_attach
 }
 
-require('lspconfig')['solargraph'].setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-  settings = { diagnostics = false },
-}
