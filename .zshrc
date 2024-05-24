@@ -65,9 +65,21 @@ setopt hist_find_no_dups
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Shell integrations
-[ -f ~/.fzfrc ]; source ~/.fzfrc;
 # eval "$(fzf --zsh)" # TODO: DEBIAN SO BEHIND
 # eval "$(zoxide init --cmd cd zsh)" # TODO: z train deez phat fucking nutz
+. /usr/share/doc/fzf/examples/key-bindings.zsh # "stable distribution"
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fzf-ssh() {
+  CHOICE="$(cat ~/hosts.txt  | fzf-tmux -p --prompt 'ssh to> ' | awk '{print $3}')"
+  [ -z $CHOICE ] && return 0
+  echo $CHOICE && ssh $CHOICE
+}
+alias sshf='fzf-ssh'
+zle -N fzf-ssh
+# bindkey -s "^e" 'fzf-ssh^M'  # TODO: fix after power10k migration
+alias fkill='ps -ef | fzf | awk '{print $2}' | xargs kill -9'
+
 
 #--# AUTO ADDED STUFF BELOW
 
